@@ -2,6 +2,7 @@ from sqlite_lib import create_db, connection, query
 
 
 def test_sqlite_lib():
+    "test library"
     dbpath = ':memory:'
     create_db(dbpath)
     conn = connection(':memory:')
