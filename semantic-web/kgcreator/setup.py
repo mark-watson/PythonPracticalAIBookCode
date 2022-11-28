@@ -13,23 +13,23 @@ def get_long_description():
 
 
 setup(
-    name="kg-creator",
+    name="kgcreator",
     description="Knowledge Graph Creator: converts text to RDF triples",
     long_description=get_long_description(),
     long_description_content_type="text/markdown",
     author="Mark Watson",
-    url="https://github.com/mark-watson/kg-creator",
+    url="https://github.com/mark-watson/kgcreator",
     project_urls={
-        "Issues": "https://github.com/mark-watson/kg-creator/issues",
-        "CI": "https://github.com/mark-watson/kg-creator/actions",
-        "Changelog": "https://github.com/mark-watson/kg-creator/releases",
+        "Issues": "https://github.com/mark-watson/kgcreator/issues",
+        "CI": "https://github.com/mark-watson/kgcreator/actions",
+        "Changelog": "https://github.com/mark-watson/kgcreator/releases",
     },
     license="Apache License, Version 2.0",
     version=VERSION,
     packages=["kgcreator"],
     entry_points="""
         [console_scripts]
-        kg-creator=kgcreator.cli:cli
+        kgcreator=kgcreator.cli:cli
     """,
     install_requires=["click"],
     extras_require={

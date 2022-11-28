@@ -1,9 +1,9 @@
-# kg-creator
+# kgcreator
 
-[![PyPI](https://img.shields.io/pypi/v/kg-creator.svg)](https://pypi.org/project/kg-creator/)
-[![Changelog](https://img.shields.io/github/v/release/mark-watson/kg-creator?include_prereleases&label=changelog)](https://github.com/mark-watson/kg-creator/releases)
-[![Tests](https://github.com/mark-watson/kg-creator/workflows/Test/badge.svg)](https://github.com/mark-watson/kg-creator/actions?query=workflow%3ATest)
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/mark-watson/kg-creator/blob/master/LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/kgcreator.svg)](https://pypi.org/project/kgcreator/)
+[![Changelog](https://img.shields.io/github/v/release/mark-watson/kgcreator?include_prereleases&label=changelog)](https://github.com/mark-watson/kgcreator/releases)
+[![Tests](https://github.com/mark-watson/kgcreator/workflows/Test/badge.svg)](https://github.com/mark-watson/kgcreator/actions?query=workflow%3ATest)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/mark-watson/kgcreator/blob/master/LICENSE)
 
 Knowledge Graph Creator: converts text to RDF triples
 
@@ -11,14 +11,14 @@ Knowledge Graph Creator: converts text to RDF triples
 
 Install this tool using `pip`:
 
-    pip install kg-creator
+    pip install kgcreator
 
 ## Usage
 
 For help, run:
 
-    kg-creator --help
-    kg-creator --inputdir=test_data --outputfile=out.rdf
+    kgcreator --help
+    kgcreator --inputdir=test_data --outputfile=out.rdf
 
 You can also use:
 
@@ -28,7 +28,7 @@ You can also use:
 
 To contribute to this tool, first checkout the code. Then create a new virtual environment:
 
-    cd kg-creator
+    cd kgcreator
     python -m venv venv
     source venv/bin/activate
 
