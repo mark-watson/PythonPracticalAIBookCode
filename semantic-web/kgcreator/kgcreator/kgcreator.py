@@ -65,6 +65,4 @@ def process_file(txt_path, meta_path, frdf):
     return data2Rdf(meta, entities, frdf)
 
 
-if __name__ == '__main__':
-    process_directory('test_data', 'output.rdf')
 
