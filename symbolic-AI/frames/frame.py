@@ -1,7 +1,5 @@
 # Implement Lisp-like frames in Python
 
-
-
 class Frame():
     frame_counter = 0
     def __init__(self, name = ''):
@@ -44,3 +42,24 @@ print(f1)
 f2.add_subframe(Frame('a sub-sub-frame'))
 print(f1)
 
+class BookShelf():
+
+    def __init__(self, name = ''):
+        self.frames = []
+    
+    def add_frame(self, a_frame):
+        self.frames.append(a_frame)
+    
+    def search_text(self, search_string):
+        ret = []
+        for frm in self.frames:
+            if frm.__str__().index(search_string):
+                ret.append(frm)
+        return ret
+    
+bookshelf = BookShelf()
+bookshelf.add_frame(f1)
+search_results = bookshelf.search_text('sub')
+print("Search results: all frames containing 'sub':")
+for rs in search_results:
+    print(rs)
