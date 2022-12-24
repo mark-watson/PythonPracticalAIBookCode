@@ -6,12 +6,15 @@ from pprint import pprint
 
 queryString = """
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
 SELECT *
 WHERE {
     <http://sw.opencyc.org/concept/Mx4rvV7SqpwpEbGdrcN5Y29ycA>  rdfs:label ?label
-    FILTER (lang(?label) = 'en')
+    FILTER (lang(?label) = 'en') .
+    <http://sw.opencyc.org/concept/Mx4rvV7SqpwpEbGdrcN5Y29ycA>
+      <http://www.w3.org/2002/07/owl#sameAs> ?dbpedia_uri filter(strstarts(str(?dbpedia_uri), "http://dbpedia.org/resource")) .
 }
-limit 20
+LIMIT 5
 """
 
 sparql = SPARQLWrapper("http://localhost:3030/opencyc")
