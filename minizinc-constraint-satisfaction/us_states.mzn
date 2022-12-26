@@ -1,4 +1,4 @@
-int: nc = 4;
+int: nc;  %% number of colors
 
 var 1..nc: alabama;
 var 1..nc: alaska;

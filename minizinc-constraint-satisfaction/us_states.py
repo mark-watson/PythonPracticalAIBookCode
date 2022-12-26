@@ -2,12 +2,14 @@ from minizinc import Instance, Model, Solver
 
 coinbc = Solver.lookup("coinbc")
 
-test1 = Model("./test1.mzn")
-instance = Instance(coinbc, test1)
-instance["n"] = 30
-instance["m"] = 200
+model = Model("./us_states.mzn")
+instance = Instance(coinbc, model)
+instance["nc"] = 4 # solve for a maximum of 4 colors
 
 result = instance.solve()
 print(result)
-print(result["x"])
-print(result["y"])
+all_states = list(result.__dict__['solution'].__dict__.keys())
+all_states.remove('_checker')
+print(all_states)
+for state in all_states:
+    print(f" {state} \t: \t{result[state]}")
