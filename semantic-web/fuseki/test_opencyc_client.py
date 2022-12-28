@@ -1,4 +1,4 @@
-## Test cleint for Apache Jena Fuselki server on localhost
+## Test client for Apache Jena Fuselki server on localhost
 
 import rdflib
 from SPARQLWrapper import SPARQLWrapper, JSON
@@ -16,6 +16,6 @@ sparql = SPARQLWrapper("http://localhost:3030/opencyc")
 sparql.setQuery(queryString)
 sparql.setReturnFormat(JSON)
 sparql.setMethod('POST')
-ret = sparql.queryandconvert()
+ret = sparql.queryAndConvert()
 for r in ret["results"]["bindings"]:
     pprint(r)
