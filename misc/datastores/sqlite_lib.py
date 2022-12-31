@@ -1,4 +1,4 @@
-from sqlite3 import connect, version, Error
+from sqlite3 import connect, version
 
 
 def create_db(db_file_path):
