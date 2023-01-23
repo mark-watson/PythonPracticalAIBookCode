@@ -8,3 +8,4 @@ IBM’s Neuro-Symbolic AI Toolkit: https://ibm.github.io/neuro-symbolic-ai/toolk
 
 Really good Python LNN docs: https://ibm.github.io/LNN/lnn/LNN.html
 
+## So far, I am just playing with the IBM examples, and modifying them.
