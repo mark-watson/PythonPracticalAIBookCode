@@ -11,10 +11,11 @@ def query(payload):
     data = json.dumps(payload)
     response = requests.request("POST", API_URL, headers=headers, data=data)
     return json.loads(response.content.decode("utf-8"))
+
 data = query(
     {
         "inputs": "Hi, I recently bought a device from your company but it is not working as advertised and I would like to get reimbursed!",
         "parameters": {"candidate_labels": ["refund", "legal", "faq"]},
     }
 )
-pprint(data)
+pprint(query(data))

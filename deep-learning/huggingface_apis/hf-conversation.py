@@ -11,6 +11,7 @@ def query(payload):
     data = json.dumps(payload)
     response = requests.request("POST", API_URL, headers=headers, data=data)
     return json.loads(response.content.decode("utf-8"))
+
 data = query(
     {
         "inputs": {
@@ -20,4 +21,4 @@ data = query(
         },
     }
 )
-pprint(data)
+pprint(query(data))
