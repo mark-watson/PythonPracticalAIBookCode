@@ -1,0 +1,1 @@
+Example code for my book "Practical Python Artificial Intelligence Programming" that can be purchased at [https://leanpub.com/pythonai](https://leanpub.com/pythonai) or read for free on on the same web site.

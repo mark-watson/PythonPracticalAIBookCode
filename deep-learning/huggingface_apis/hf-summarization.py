@@ -1,19 +1,9 @@
-import json
-import requests
-import os
+from transformers import pipeline
 from pprint import pprint
 
-HF_API_TOKEN = os.environ.get('HF_API_TOKEN')
-headers = {"Authorization": f"Bearer {HF_API_TOKEN}"}
-API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn"
+summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+  
+text = "The President sent a request for changing the debt ceiling to Congress. The president might call a press conference. The Congress was not oblivious of what the Supreme Court's majority had ruled on budget matters. Even four Justices had found nothing to criticize in the President's requirement that the Federal Government's four-year spending plan. It is unclear whether or not the President and Congress can come to an agreement before Congress recesses for a holiday. There is major dissagrement between the Democratic and Republican parties on spending."
 
-def query(payload):
-    data = json.dumps(payload)
-    response = requests.request("POST", API_URL, headers=headers, data=data)
-    return json.loads(response.content.decode("utf-8"))
-    
-data = query({"inputs": "The President went to Congress. The Congress was not oblivious of what the Supreme Court's majority had ruled. Even four Justices had found nothing to criticize in the President's requirement that the Federal Government's four-year",
-              "parameters": {"do_sample": False},
-              "max_length": 12})
-
-pprint(data)
+results = summarizer(text, max_length=60)[0]
+print("".join(results['summary_text']))
