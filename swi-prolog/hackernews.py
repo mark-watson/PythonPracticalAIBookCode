@@ -18,7 +18,6 @@ def get_new_stories(an_agent="PythonAiBook/1.0"):
     # just return the most recent 3 stories:
     return the_ids[0:3]
 
-
 def get_story_data(an_id, an_agent="PythonAiBook/1.0"):
   req = Request(f"https://hacker-news.firebaseio.com/v0/item/{an_id}.json",
                 headers={"User-Agent": an_agent})

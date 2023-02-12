@@ -1,7 +1,8 @@
-"Implement Lisp-like frames in Python"
+"""Implement Lisp-like frames in Python"""
 
-class Frame():
-  "Implement a simple Python frame library"
+# %% Define a frame class
+class Frame:
+  """Implement a simple Python frame library"""
   frame_counter = 0
   def __init__(self, name = ""):
     Frame.frame_counter += 1
@@ -34,6 +35,7 @@ class Frame():
         ret = ret + frm.__str__()
     return ret
 
+# %%
 f1 = Frame()
 f2 = Frame("a sub-frame")
 f1.add_subframe(f2)
@@ -43,8 +45,9 @@ print(f1)
 f2.add_subframe(Frame("a sub-sub-frame"))
 print(f1)
 
-class BookShelf():
-  "A bookshelf is a collection of frames"
+# %% Define a container class to hold frames
+class BookShelf:
+  """A bookshelf is a collection of frames"""
   def __init__(self, name = ""):
     self.frames = []
     self.name = name
@@ -59,9 +62,14 @@ class BookShelf():
         ret.append(frm)
     return ret
 
+# %%
 bookshelf = BookShelf()
 bookshelf.add_frame(f1)
 search_results = bookshelf.search_text("sub")
 print("Search results: all frames containing 'sub':")
 for rs in search_results:
   print(rs)
+
+# %%
+
+# %%
