@@ -1,4 +1,4 @@
-# from OpenAI's documentation
+# Using ChatGPT API (from OpenAI's documentation)
 
 import os
 
@@ -6,11 +6,9 @@ import openai
 
 openai.api_key = os.environ.get('OPENAI_KEY')
 
-# create a completion
-input_text = "Mary went to the grocery store. She bought"
-completion = openai.Completion.create(engine="davinci",
-                                      prompt=input_text)
+completion = openai.ChatCompletion.create(
+  model="gpt-3.5-turbo", 
+  messages=[{"role": "user", "content": "What do I do when Emacs goes to the background and I can't access it?"}]
+)
 
-# print the completion
-print(completion.choices[0].text)
-
+print(completion)
