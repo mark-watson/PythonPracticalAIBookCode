@@ -1,0 +1,17 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run OpenAI Completion Script",
+            "type": "shell",
+            "command": "rye",
+            "args": ["run", "llm-openai"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "detail": "Run the script defined in pyproject.toml using Rye"
+        }
+    ]
+}
