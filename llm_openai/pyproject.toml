@@ -1,0 +1,29 @@
+[project]
+name = "llm-openai"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Mark Watson", email = "markw@markwatson.com" }
+]
+dependencies = [
+    "openai>=1.35.10",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[project.scripts]
+"llm-openai" = "llm_openai:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/llm_openai"]
