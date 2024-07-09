@@ -4,3 +4,5 @@ run:
 clean:
 	rm -rf .venv __pycache__ */__pycache__ */*/__pycache__ *.cpy */*.cpy */*/*.cpy
 
+install_local:
+	pip install -e .
