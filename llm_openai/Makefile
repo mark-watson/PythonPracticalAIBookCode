@@ -6,3 +6,6 @@ dependencies:
 
 clean:
 	rm -r -f .venv
+
+requirements_txt:
+	rye list > requirements.txt
