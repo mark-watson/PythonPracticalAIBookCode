@@ -14,6 +14,9 @@ def main() -> int:
     completion = client.chat.completions.create(
         model="gpt-4o", 
         messages=[{"role": "user",
+                   "n": 1,
+                   "temperature": 0.0, # most deterministic results
                    "content": "What do I do when Emacs goes to the background and I can't access it?"}])
-    print(completion.choices[0].message.content)
+    print(f"\nCompletion:\n\n{completion.choices[0].message.content}")
+    print(f"Token use for completion: {completion.usage}")
     return 0
