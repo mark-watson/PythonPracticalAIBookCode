@@ -1,0 +1,8 @@
+{
+    "python.testing.pytestEnabled": true,
+    "python.testing.pytestArgs": ["."],
+    "python.testing.autoTestDiscoverOnSaveEnabled": false,
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "tasks.testTask": "Run Rye Tests"
+}
