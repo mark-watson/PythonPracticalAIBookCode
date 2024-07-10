@@ -17,3 +17,15 @@ def test_completion_with_context():
     print(response)
     assert len(response) > 0
     assert any(keyword in response.lower() for keyword in ['299,792,458', 'meters per second', 'm/s', 'c'])
+
+
+def test_completion_with_entity_relations_context():
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    context_file_path = os.path.join(current_dir, '..', 'context_data', 'entity_relationships.txt')
+    
+    prompt = "Bill Gates is the founder of Microsoft. Microsoft is headquartered in Seattle Washington."
+    response = completion_with_context(prompt, context_file_path)
+    
+    print(response)
+    assert len(response) > 0
+    assert any(keyword in response.lower() for keyword in ['299,792,458', 'meters per second', 'm/s', 'c'])
