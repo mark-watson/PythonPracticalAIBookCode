@@ -11,3 +11,12 @@ def completion(prompt: str) -> str:
     print(response)
     return response['response']
 
+def completion_with_context(prompt: str, context_file_path: str) -> str:
+    with open(context_file_path, 'r') as file:
+        context = file.read()
+    
+    full_prompt = f"Context:\n{context}\n\nPrompt:\n{prompt}"
+    response = client.generate(model_name, full_prompt)
+    print(response)
+    return response['response']
+
